@@ -17,12 +17,14 @@ class App extends React.Component {
     fetch(`https://api.github.com/users/dhoskins97`)
     .then(res => {return res.json();}) //formats response into json
     .then(githubInfo => this.setState( {userInfo: githubInfo} )) //takes json format and sets it to state of userInfo
+    .catch(error => console.log(error));
   }
 
   render(){
+    this.fetchUserInfo();
     return (
       <div className="App">
-        <CardList />
+        <CardList cardListInfo={this.state.userInfo}/>
       </div>
     ); //end of return block
   }; //end of render method

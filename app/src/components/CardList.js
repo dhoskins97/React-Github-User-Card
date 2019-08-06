@@ -12,9 +12,7 @@ class CardList extends React.Component {
 
     render(props){
         return (<div>
-            {props.map(follower => {
-                return <UserCard userData={follower} />
-            })}
+            { props == [] ? <p>Loading...</p> : props.map(follower => {return <UserCard userData={follower} />})}
         </div>
         );
     };
