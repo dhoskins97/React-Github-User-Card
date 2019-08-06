@@ -2,17 +2,17 @@ import React from 'react';
 
 class UserCard extends React.Component {
     
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
     };
 
 
-    render(props){
+    render(){
         return (
-            <div>
-                <img src={props.avatar_url} />
-                <h2>GitHub Handle: {props.login}</h2>
+            <div className="cardContainer">
+                <img src={this.props.userInfo.avatar_url} />
+                <h2>GitHub Handle: {this.props.userInfo.login}</h2>
             </div>
         )
     };
